@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Luzerner Rollenspieltag 2018</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600i,600|Signika" rel="stylesheet">
+
+	<style>
+		/* Colors
+
+Wine: #42253d
+Seaweed: #8c8419
+Rose: #d70b31
+
+Honey: #eaab06
+Ivory: #f2cba2 */
+
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			font-family: 'Open Sans', sans-serif;
+			color: white;
+			background: url('img/background.jpg') left bottom no-repeat #293a48;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			position: relative;
+		}
+
+		.grid {
+			padding: 50px;
+			display: grid;
+			grid-template-columns: repeat(9, 1fr);
+			grid-template-rows: repeat(9, 1fr);
+			grid-gap: 10px;
+			height: 100vh;
+			width: 100vw;
+			grid-template-areas:
+				"header header header header header header header header header"
+				"header header header header header header header header header"
+				"info info body-german body-german body-german body-german body-german . ."
+				"info info body-german body-german body-german body-german body-german . ."
+				"info info body-german body-german body-german body-german body-german . ."
+				"dice dice dice dice body-english body-english body-english body-english body-english"
+				"dice dice dice dice body-english body-english body-english body-english body-english"
+				"dice dice dice dice body-english body-english body-english body-english body-english"
+				"dice dice dice dice footer footer footer footer footer";
+		}
+
+		/* .grid * {
+			background-color: red;
+		} */
+
+		header {
+			grid-area: header;
+		}
+
+		.info {
+			grid-area: info;
+		}
+
+		.body-german {
+			grid-area: body-german;
+		}
+
+		.body-english {
+			grid-area: body-english;
+		}
+
+		/* footer {
+			grid-area: footer;
+		} */
+
+		h1,
+		h2 {
+			font-family: "Signika", serif;
+			font-size: 3rem;
+			line-height: 0.8em;
+			color: white;
+		}
+
+		h2 {
+			font-size: 4rem;
+		}
+
+		h1,
+		h2,
+		h3 {
+			text-shadow: 6px 5px 0 #293a48;
+		}
+
+		p {
+			text-shadow: 2px 1px 0 #293a48;
+		}
+
+		/* english title */
+		h1 span {
+			text-indent: 1em;
+			color: #f2cba2;
+			position: relative;
+			top: 20px;
+			left: 10px;
+		}
+
+		.info {
+			text-align: right;
+			padding-right: 20px;
+			color: #8c8419;
+			font-weight: 600;
+			font-style: italic;
+		}
+
+		.body-english {
+			font-style: italic;
+			color: #f2cba2;
+		}
+
+		.bodycopy h3 {
+			margin-bottom: 10px;
+			font-size: 1.5rem;
+			text-transform: uppercase;
+			font-weight: 600;
+		}
+
+		.bodycopy p {
+			margin-bottom: 5px;
+			font-size: 1.3rem;
+			line-height: 1.5em;
+			letter-spacing: 0.02em;
+		}
+
+		footer {
+			position: absolute;
+			right: 50px;
+			bottom: 30px;
+		}
+
+		/* alternative slides */
+
+
+		h2.alterative-text-de {
+			grid-row-start: 5;
+			grid-row-end: 9;
+			grid-column-start: 3;
+			grid-column-end: 9;
+			display: none;
+		}
+
+		h2.alterative-text-en {
+			grid-row-start: 6;
+			grid-row-end: 9;
+			grid-column-start: 5;
+			grid-column-end: 9;
+			color: #8c8419;
+			display: none;
+		}
+
+		.alternative-logo {
+			grid-row-start: 2;
+			grid-row-end: 4;
+			grid-column-start: 6;
+			grid-column-end: 9;
+			display: none;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div class="grid">
+		<header>
+			<h1>Überschrift <span>Überschrift 2</span></h1>
+		</header>
+		<p class="info">info</p>
+		<div class="bodycopy body-german">
+			<h3>Überschrift</h3>
+			<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorem officia. Iste at nesciunt sed nisi
+				repellendus porro cupiditate corrupti a velit quibusdam animi soluta veniam, magnam consectetur sapiente rem.</p>
+		</div>
+		<div class="bodycopy body-english">
+			<h3>Überschrift</h3>
+			<p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, dolorem officia. Iste at nesciunt sed nisi
+				repellendus porro cupiditate corrupti a velit quibusdam animi soluta veniam, magnam consectetur sapiente rem.</p>
+		</div>
+		<h2 class="alterative-text-de">Herzlich willkommen!</h2>
+		<h2 class="alterative-text-en">Welcome!</h2>
+		<div class="alternative-logo">
+			<img src="img/logo.svg" alt="Logo" width="500px">
+		</div>
+	</div>
+	<footer>
+		<img src="img/logo.svg" alt="Logo" width="300px">
+	</footer>
+	<script src="js/slides.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>
