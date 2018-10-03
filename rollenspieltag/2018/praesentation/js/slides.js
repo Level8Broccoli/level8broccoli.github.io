@@ -66,7 +66,7 @@ const slidesTimed = [{
     time: new Date(2018, 9, 6, 19),
   },
   {
-    titleTEST: "Turbo Fate, 15 Uhr",
+    titleTEST: "Turbo Fate, 15 Uhr, Frauenrunde",
     titleDE: "Turbo Fate",
     textDE: `<p>Turbo-Fate ist die gekürzte Version von Fate Core. Fate ist ein «Universal» Rollenspiel.</p><p> «Universal» bedeutet in diesem Zusammenhang das die Regelmechaniken nicht für eine bestimmte Spielwelt entworfen wurden, sondern darauf ausgelegt sind möglichst viele Welten und Hintergründe zu unterstützen.</p><p>Nur für Frauen.</p>`,
     moderator: "Manuela",
