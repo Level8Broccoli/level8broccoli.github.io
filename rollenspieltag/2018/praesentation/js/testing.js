@@ -1,10 +1,11 @@
+let gridFromHTML2 = document.querySelector('.grid');
 let bodyHTML = document.querySelector('body');
 let headerElement = document.createElement("header");
 let options;
-bodyHTML.insertBefore(headerElement, gridFromHTML);
+bodyHTML.insertBefore(headerElement, gridFromHTML2);
 
 // reset animation
-gridFromHTML.style.opacity = 1;
+gridFromHTML2.style.opacity = 1;
 footerLogo.style.opacity = 1;
 tl.kill();
 
@@ -37,7 +38,7 @@ function getSlide(index) {
     footerLogo.style.opacity = 0;
   }
   output = buildSlide(allSlides[index]);
-  gridFromHTML.innerHTML = output.output;
+  gridFromHTML2.innerHTML = output.output;
 }
 
 // window.onload = getSlide();
