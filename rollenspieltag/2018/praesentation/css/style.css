@@ -142,14 +142,15 @@ img {
 h1,
 h2 {
   font-family: "Signika", serif;
-  font-size: 3rem;
+  font-size: 4rem;
   line-height: 0.8em;
   color: white;
   font-weight: 300;
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 6rem;
+  line-height: 1.1em;
 }
 
 h1,
@@ -183,14 +184,14 @@ h1 span {
 
 h3 {
   margin-bottom: 10px;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-transform: uppercase;
   font-weight: 600;
 }
 
 p, li {
   margin-bottom: 5px;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   line-height: 1.5em;
   letter-spacing: 0.02em;
 }
@@ -218,5 +219,4 @@ footer {
   position: absolute;
   right: 50px;
   bottom: 30px;
-  opacity: 0;
 }

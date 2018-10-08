@@ -5,7 +5,6 @@ let slideCurrent;
 let gridFromHTML = document.querySelector('.grid');
 let outputHTML;
 const footerLogo = document.querySelector('footer');
-let stateOfFooter = false;
 
 let tl = new TimelineMax({
   onComplete: executiveFunction
@@ -37,27 +36,14 @@ function shuffleEvents(eventArray) {
 
 // Ein- und Ausblenden der Slides
 function slideTransition() {
-  if (stateOfFooter === false && slideCurrent.footer === true) {
-    tl.to([footerLogo, gridFromHTML], 2, {
-      opacity: 1
-    });
-    stateOfFooter = true;
-  } else {
-    tl.to(gridFromHTML, 2, {
-      opacity: 1
-    });
-  }
+  tl.to(gridFromHTML, 2, {
+    opacity: 1
+  });
 
-  if (stateOfFooter === true && slideCurrent.footer === false) {
-    tl.to([footerLogo, gridFromHTML], 2, {
-      opacity: 0
-    }, "+=2");
-    stateOfFooter = false;
-  } else {
-    tl.to(gridFromHTML, 2, {
-      opacity: 0
-    }, "+=2");
-  }
+  tl.to(gridFromHTML, 2, {
+    opacity: 0
+  }, "+=200");
+
 }
 
 // Starte Präsentation

@@ -30,9 +30,9 @@ function buildSlide(slideObject) {
       outputHTML = `<div class="grid-item grid-item--header"><h1>`;
 
       if (slideObject.languageDE === true) {
-        outputHTML += slideObject.titleDE;
+        outputHTML += `Demnächst <span>${slideObject.titleDE}</span>`;
       } else {
-        outputHTML += slideObject.titleEN;
+        outputHTML += `Starting soon <span>${slideObject.titleEN}</span>`;
       }
 
       outputHTML += `

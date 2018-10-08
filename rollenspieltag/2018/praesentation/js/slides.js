@@ -1,9 +1,22 @@
 // timeless
 
-const slidesTimeless = [{
-    titleTEST: "Herzlich willkommen!",
-    titleDE: "Herzlich willkommen!",
-    titleEN: "Welcome!",
+const slidesTimeless = [
+  // {
+  //   titleTEST: "Herzlich willkommen!",
+  //   titleDE: "Herzlich willkommen!",
+  //   titleEN: "Welcome!",
+  //   top: {
+  //     img: true,
+  //     path: "logo.svg",
+  //     alt: "Logo",
+  //   },
+  //   category: "full",
+  //   full: true,
+  // },
+  {
+    titleTEST: "Verabschiedung",
+    titleDE: "Schön, dass du mit uns spielst!",
+    titleEN: "It was nice having you to play!",
     top: {
       img: true,
       path: "logo.svg",
@@ -18,7 +31,16 @@ const slidesTimeless = [{
     textDE: `<p>Nach dem Rollenspieltag ist vor dem Rollenspieltag. Fülle den Feedback-Bogen aus damit wir dich über weitere Events informieren können und trete unserem Chat bei: <em>chat.gildedernacht.ch</em>.</p>`,
     textEN: `<p>Today has not to be the end. If you fill out our feedback form we can inform you in the future about role-play events. We also encourage you to join our chat at <em>chat.gildedernacht.ch</em>.</p>`,
     category: "info",
-  }
+  },
+  {
+    titleTEST: "Spielersuche",
+    titleDE: "Spielersuche",
+    titleEN: "Search for players",
+    textDE: `<p>Bist du auf der Suche nach einer Spielgruppe für nach dem Luzerner Rollenspieltag? Dann markiere dein Namenskleber mit einem <em>runden Sticker.</em> Kannst du dir vorstellen eine Runde zu leiten? Dann schnapp dir einen <em>silbernen Sternsticker.</em></p>`,
+    textEN: `<p>Are you looking for a group to play with for after the Lucerne Role-Play-Day? Get a <em>round sticker</em> and
+    put it on your name badge. Furthermore, if you are willing to lead a group in the future, get yourself a <em>silver star sticker.</em></p>`,
+    category: "info",
+  },
 ]
 
 // timed
