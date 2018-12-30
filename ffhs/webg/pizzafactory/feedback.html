@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Tony's Pizza Factory – Soft drinks</title>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+	<div id="topbar">Tony's Pizza Factory</div>
+
+	<header>
+
+		<a href="index.html" class="logo">Tony's Pizza Factory</a>
+
+		<nav id="topnav">
+			<ul>
+				<li><a href="pizza.html">Pizza</a></li>
+				<li><a href="salad.html">Salad</a></li>
+				<li><a href="softdrinks.html">Soft drinks</a></li>
+				<li><a href="feedback.html" class="active">Feedback</a></li>
+				<li><a href="javascript:void(0);" class="icon" onclick="menuOnAndOff()">
+						<i class="fa fa-bars"></i>
+					</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<h1>Tell us what you think</h1>
+		<div class="form">
+			<form action="zielseite" method="methode">
+				<label>How do you like our pizza?</label>
+				<fieldset>
+					<input type="radio" name="quality" value="awesome" id="choiceawesome">
+					<label for="choiceawesome">awesome</label>
+					<input type="radio" name="quality" value="good" id="choicegood">
+					<label for="choicegood">good</label>
+					<input type="radio" name="quality" value="okey" id="choiceokey1">
+					<label for="choiceokey1">okey</label>
+					<input type="radio" name="quality" value="poor" id="choicepoor">
+					<label for="choicepoor">poor</label>
+				</fieldset>
+				<div id="message-quality"></div>
+				<label>What do you think about prizes?</label>
+				<fieldset>
+					<input type="radio" name="view" value="fair" id="choicefair">
+					<label for="choicefair">fair</label>
+					<input type="radio" name="view" value="okey" id="choiceokey2">
+					<label for="choiceokey2">okey</label>
+					<input type="radio" name="view" value="expensive" id="choiceexpensive">
+					<label for="choiceexpensive">expensive</label>
+				</fieldset>
+				<div id="message-view"></div>
+				<label for="name">Your name?</label>
+				<input name="name" id="name" required>
+				<div id="message-name"></div>
+				<label for="email">Your e-mail address?</label>
+				<input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="email" required>
+				<div id="message-email"></div>
+				<label for="feedback">What can we do better?</label>
+				<textarea cols="50" id="feedback" name="feedback" required></textarea>
+				<div id="message-feedback"></div>
+				<input type="submit" value="Send" id="submit">
+				<div id="message-submit"></div>
+			</form>
+		</div>
+	</main>
+
+	<footer>
+		<div id="opening-hours">
+			<h3>Hours:</h3>
+			<p>Mon-Thu: 11 am. - 23 pm.</p>
+			<p>Fri-Sat: 11 am. - 24 pm.</p>
+			<p>Sunday closed</p>
+		</div>
+		<div id="quote">
+			<blockquote>
+				The Pizzeria is one place I have been wanting to visit for a long time. The reason beeing their Napoli pizza which
+				absolutely blew me away
+			</blockquote>
+			<cite>– Jimmy</cite>
+		</div>
+		<div id="address">
+			<h3>Address:</h3>
+			<p>Tony's Pizza Factory</p>
+			<p>2122 N Clark St</p>
+			<p>Chicago, IL 60614, USA</p>
+		</div>
+	</footer>
+	<script src="js/menu.js"></script>
+	<script src="js/form.js"></script>
+	<script src="js/ajax.js"></script>
+</body>
+
+</html>
