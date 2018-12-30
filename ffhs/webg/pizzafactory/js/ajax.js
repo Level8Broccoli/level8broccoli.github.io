@@ -1,8 +1,8 @@
 // AJAX
 
 var xhr = new XMLHttpRequest();
-var url = "https://tonyspizzafactory.herokuapp.com/api/pizzas";
-xhr.open("GET", url, true);
+var url = "https://tonyspizzafactory.herokuapp.com/api/auth";
+xhr.open("POST", url, true);
 xhr.onreadystatechange = function () {
   if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
     var json = JSON.parse(xhr.responseText);
