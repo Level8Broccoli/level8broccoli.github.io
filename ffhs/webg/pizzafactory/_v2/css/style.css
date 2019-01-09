@@ -1,0 +1,510 @@
+/* Typography */
+
+/***********************
+  ^^^
+  Gerade, wenn wir nur mit einer CSS-Datei arbeiten, empfehle ich die CSS Definitionen in klar verständliche und logische Bereiche einzuteilen und mit einer erklärenden Überschrift zu versehen (hier 'Typography').
+
+  Die Schrift im Wireframe gefällt mir gar nicht, deshalb hab ich mir eine neue gesucht unter https://fonts.google.com/ und über die @import Regel von CSS eingebunden.
+
+  Roboto ist eine sehr neutrale Schrift. Wir können auch gerne eine andere Schrift nehmen ;-)
+
+  Um das ganze spannder zu machen, hab ich noch die Roboto Slab geladen, um die Überschriften auszuzeichnen.
+***********************/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab|Roboto:400,400i,700');
+
+body {
+  /***********************
+    Bei font-family kannst du mehrere Schriften angeben, und dann prüft der Browser, welche Schrift auf dem Computer geladen ist (von links nach rechts).
+
+    Ganz zuletzt sollte man einen allgemeinen "Fallback" definieren wie z.B. "sans-serif", damit der Browser in diesem Fall irgendeine serifenlose (sans-serif) Schrift nehmen soll, sollten alle anderen Schriften nicht vorhanden sein.
+  ***********************/
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+
+  /***********************
+    Oft wird bei 'font-weight' (deutsch: Schriftschnitt) simple Werte wie 'bold' verwendet. Bei professionellen Schriften werden die Schriftschnitte aber meistens als Zahlenwert definiert. Hier bei der Roboto z.B. steht die 400 für normal und 700 für bold.
+
+    Roboto (und auch andere Schriften) haben aber auch noch mehr Schriftschnitte und da Zahlen verwendet werden, kann feiner abgestuft werden.
+
+    Wie du oben bei der @import Regel siehst, laden wir bei Roboto nur die Schriftschnitte 400 und 700 (und 400i, welches einfach der kursive/italic Schriftschnitt ist -> siehe blockquote weiter unten)
+  ***********************/
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /***********************
+    Da Roboto Slab einen Leerschlag im Namen hat, muss der Namen mit Anführungszeichen (') umklammert werden. Grundsätzlich kann man auch immer Anführungszeichen verwenden.
+  ***********************/
+  font-family: 'Roboto Slab', Georgia, Times, 'Times New Roman', serif;
+}
+
+blockquote {
+  /***********************
+    Wie oben erwhähnt greifen wir hier auf den Schriftstnitt 400i zu. 'font-weight: 400' wurde oben im 'body' schon definiert. Da 'font-weight' vererbt wird, ist 'blockquote' bereits 400. Hier definieren wir nur noch, dass die Version 'italic' (kursiv) verwendet werden soll.
+  ***********************/
+  font-style: italic;
+}
+
+/***********************
+  Wir können die Schriftgrösse in vielen verschiedenen Formaten angeben. Pixel ist nur eines davon. Für Tests und Prototypen ist manchmal 'em' bequemer.
+
+  'em' ist jeweils im Bezug zum Elternelement. '1em' bedeutet 'gleich gross wie Elternelement. Alles grösser als '1em' bedeutet grösser als das Elternelement somit bedeutet kleiner als '1em', dass die Schrift kleiner als das Elternelement ist.
+/***********************/
+
+.logo {
+  font-size: 1.5em;
+}
+
+.form form>label {
+  font-weight: 700;
+}
+
+/* Reset */
+
+/***********************
+  Jeder Browser hat einige CSS Definitionen bereits von Grund auf implementiert. Z.B. die Schriftgrössen oder dass das 'body' Tag bereits einen 'margin' (Abstand nach aussen) hat. Leider machen nicht alle Browser dasselbe und gewisse Voreinstellungen sind auch ungewünscht.
+
+  Mit einem sogenannten CSS Reset wird dem entgegengewirkt und die Einstellungen auf einen gemeinsamen Nenner gebracht.
+
+  Das ganze Thema ist sehr subjektiv und wenn man nach 'CSS Reset' googelt, gibt es 1000 Möglichkeiten und Meinungen, was optimal ist.
+
+  Mit dem Stern (*) werden ALLE Elemente beeinflusst. Ist eine sehr 'grobe' Art aber ich denke fürs Erste und für eine Übung ist das ok.
+***********************/
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/***********************
+  Und hier überschreiben wir noch das Aussehen der Links, damit sie nicht blau und unterstrichen sind, da wir dies meist nicht so lassen, sondern später selber bestimmen, wie die Links dann aussehen.
+***********************/
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+img {
+  object-fit: cover;
+}
+
+
+/* Colors */
+
+header {
+  background-color: #591829;
+}
+
+body,
+footer {
+  background-color: #1A2624;
+}
+
+header,
+header a,
+footer,
+footer a {
+  color: #ffffff;
+}
+
+#topbar,
+main {
+  background-color: #ffffff
+}
+
+h2 {
+  color: #591829;
+}
+
+/* Header */
+
+/***********************
+  Es folgen unter anderem die Einstellungen für das responsive Menü, gem. https://www.w3schools.com/howto/howto_js_topnav_responsive.asp
+
+  Ich habs z.T. angepasst, da das HTML bei uns anders ist, als beim Tutorial.
+
+  Schaus dir deshalb genau an und versuch die einzelnen CSS-Regeln zu verstehen. Vielleicht markierst du diese, die dir keinen Sinn machen?
+***********************/
+
+#topbar {
+  padding: 5px 20px;
+}
+
+header {
+  padding: 20px;
+  height: 30px;
+  position: relative;
+}
+
+nav ul {
+  padding-left: 0;
+  list-style: none;
+  float: right;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  padding: 25px 10px;
+  float: left;
+  height: 20px;
+}
+
+/* könntest du mir den Teil noch einmal erklären, mit dem not(.icon) der Rest habe ich verstanden.*/
+
+nav ul li a:not(.icon):hover {
+  background-color: #92A4A6;
+}
+
+nav ul li a.icon:hover {
+  color: #92A4A6;
+}
+
+nav .active {
+  background: #92A4A6;
+}
+
+nav .icon {
+  display: none;
+  padding: 25px 25px;
+}
+
+@media screen and (max-width: 600px) {
+  nav a:not(.active) {
+    display: none;
+  }
+
+  nav a.icon {
+    float: right;
+    display: block;
+  }
+
+  nav.responsive a.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  nav.responsive ul li {
+    background-color: #9fc5f8;
+  }
+
+  nav.responsive ul li {
+    display: block;
+    width: 100vw;
+  }
+
+  nav.responsive ul li a {
+    float: none;
+    display: block;
+  }
+}
+
+/* Main */
+
+main {
+  padding: 25px;
+}
+
+ul.intro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: center;
+  padding-left: 0;
+  list-style: none;
+}
+
+@media screen and (max-width: 1000px) {
+  ul.intro {
+    grid-template-columns: 1fr;
+  }
+}
+
+ul.intro a {
+  display: block;
+  position: relative;
+}
+
+ul.intro h2 {
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+  font-size: 2em;
+  text-transform: uppercase;
+
+  /* Positionierung auf dem Bild */
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* Text Zentrierung */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ich versuche hier das Bild auf index in die Mitte zu bringen */
+
+.img_pizzeria {
+  height: 350px;
+  width: 100%;
+  display: block;
+  margin: 0px auto 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/***********************
+  Versuchen wir es doch hier mit einem Grid. Wir könnten diese Auflistung (sei es von Soft Drinks, Pizzen oder Salate) auch mit der Flexbox und sicher noch auf andere Arten lösen.
+***********************/
+
+ul.article {
+  display: grid;
+
+  /***********************
+    Umso fauler, umso besser. Statt '1fr 1fr 1fr 1fr' zu schreiben, kann man auch die 'repeat()' Funktion vo CSS verwenden.
+  ***********************/
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  justify-items: center;
+
+  padding-left: 0;
+  list-style: none;
+}
+
+ul.article li {
+  width: 300px;
+}
+
+/***********************
+  Ich hab hier mal eine Grösse für die Bilder definiert. Die Überschreiben die Grösse der Bilder im HTML. Da 300 x 300 Pixel quadratisch ist, aber nicht alle Bilder quadratisch sind, werden sie verzogen.
+
+  Entweder bearbeiten wir alle Bilder, dass sie quadratisch sind oder wir finden eine andere Lösung.
+***********************/
+
+ul.article li img {
+  height: 300px;
+  width: 300px;
+}
+
+ul.article li h2 {
+  font-size: 0.9em;
+  padding: 5px 0;
+}
+
+/***********************
+  Trolley-Piktorgramme:
+***********************/
+
+ul.article li a img {
+  height: 25px;
+  width: 25px;
+}
+
+div ul.article li img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+ul.article div {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 0;
+}
+
+ul.article div .price {
+  flex-grow: 1;
+  text-align: right;
+}
+
+ul.article small {
+  display: block;
+}
+
+/***********************
+  Da es bei kleineren Bildschirmgrössen nicht mit 4 Spalten geht, hier ein paar Media Queries, die die Spaltenanzahl verringern:
+***********************/
+
+@media screen and (max-width: 1280px) {
+  ul.article {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  ul.article {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 660px) {
+  ul.article {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Feedback */
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.form form {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  grid-gap: .5em 1em;
+}
+
+.form form>label {
+  text-align: right;
+
+}
+
+.form fieldset {
+  border: none;
+}
+
+.form fieldset label {
+  margin: 0 10px 0 2px;
+}
+
+.form textarea {
+  height: 150px;
+}
+
+.form #submit {
+  grid-column-start: 2;
+  justify-self: end;
+}
+
+@media screen and (max-width: 600px) {
+  .form form {
+    grid-template-columns: 1fr;
+    grid-gap: 0;
+  }
+
+  .form form>label {
+    text-align: left;
+    margin: 10px 0 2px;
+  }
+
+  .form #submit {
+    grid-column-start: 1;
+  }
+}
+
+div[id^="message"] {
+  color: red;
+  grid-column-start: 2;
+  margin-bottom: 5px;
+}
+
+
+/* Footer */
+
+/***********************
+  Versuche wirs doch hier mal mit einer Flexbox. Ein guter Einsatz für die Flexbox ist, wenn die Elemente auf einer Achse (horizontal oder vertikal) angeordnet werden sollen.
+
+  Grid macht dann bei einer dreidimensionalen Anordnung Sinn. (Würde hier aber sicher auch machbar sein).
+
+  Wir könnten auch mit Floats arbeiten, aber finde ich persönlich schwieriger zu bändigen und zu erklären.
+
+  Zurück zur Flexbox: Ich gucke das immer auf folgender Seite nach: https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+  Mit 'display: flex' wird das 'footer' Element als Flexbox initialisiert. Die Kindelemente werden ohne weitere Konfiguration auf einer horizontaler Ebene angeordnet, sofern Platz vorhanden ist (nur die Kindelemente, die gleich auf der nächsten Ebene folgen; Kindelemente die mehr als eine Ebene 'entfernt' sind, werden durch die Flexbox nicht direkt beeinflusst).
+***********************/
+
+footer {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer div {
+  padding: 0 25px 0 0;
+}
+
+footer div:last-child {
+  padding: 0;
+}
+
+footer #opening-hours,
+footer #address {
+  flex-basis: 25%;
+}
+
+footer #quote {
+  flex-basis: 50%;
+}
+
+footer #quote blockquote,
+footer #quote cite {
+  display: inline;
+}
+
+footer h3 {
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1000px) {
+  footer {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  footer #opening-hours,
+  footer #quote,
+  footer #address {
+    padding: 0 0 20px;
+    flex-basis: 50%;
+  }
+
+  footer #quote {
+    flex-basis: 100%;
+    order: 2;
+  }
+}
+
+/* Feedback Tables */
+
+#statistic {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#statistic table {
+  margin: 10px;
+  padding: 10px;
+  background-color: #92A4A6;
+}
+
+#statistic table tr > :nth-child(2n) {
+  padding-left: 10px;
+  text-align: right;
+}
